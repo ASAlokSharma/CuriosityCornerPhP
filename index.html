@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curiosity Corner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── Transition States ── */
+        .topic-section {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .topic-section.visible {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .categories {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .categories.hidden {
+            display: none;
+        }
+
+        /* ── Active Category Card ── */
+        .category-card.active {
+            background-color: #3a3a3a;
+            border-bottom: 2px solid #4a9eff;
+            color: #4a9eff;
+        }
+
+        /* ── Back Button ── */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: transparent;
+            border: 2px solid #6e4aff;
+            color: #a98aff;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-family: 'Figtree', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 25px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #6e4aff;
+            color: #fff;
+        }
+
+        .back-btn-wrap {
+            text-align: left;
+            padding: 10px 30px 0 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="WebsiteLogo.png" alt="Curiosity Corner Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Curiosity Corner !</h1>
+            <h2>Complex Things, Simply Explained</h2>
+            <p>Ever wondered how things work? We explain it in easy language!</p>
+            <input type="text" id="searchBox" placeholder="Search for a topic !" class="search-bar">
+        </div>
+    </section>
+
+    <!-- Back Button (hidden until a category is open) -->
+    <div class="back-btn-wrap" id="backBtnWrap" style="display:none;">
+        <button class="back-btn" id="backBtn">← Back to Categories</button>
+    </div>
+
+    <!-- Categories Grid -->
+    <section class="categories" id="categoriesSection">
+        <div class="container">
+            <div class="category-grid">
+                <a href="#" class="category-card" data-target="science">🔬 Science</a>
+                <a href="#" class="category-card" data-target="technology">💻 Technology</a>
+                <a href="#" class="category-card" data-target="nature">🌿 Nature</a>
+                <a href="#" class="category-card" data-target="space">🌌 Space</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Science -->
+    <section id="science" class="topic-section">
+        <div class="container">
+            <h3>Science</h3>
+
+            <div class="explanation-card">
+                <h4>How Do Magnets Work?</h4>
+                <p class="simple-answer"><strong>Simple Answer:</strong> Magnets have invisible forces that push and pull certain metals.</p>
+                <p class="analogy"><strong>Think of it like:</strong> Imagine tiny invisible hands inside the magnet. Some hands want to hold metal things close (attract), and some want to push them away (repel).</p>
+                <div class="steps">
+                    <strong>How it works:</strong>
+                    <ol>
+                        <li>Magnets have two ends called North and South poles</li>
+                        <li>Opposite poles (N + S) attract each other like best friends</li>
+                        <li>Same poles (N + N or S + S) push away like they don't want to touch</li>
+                        <li>They only work on special metals like iron</li>
+                    </ol>
+                </div>
+                <p class="fun-fact"><strong>Fun Fact:</strong> Earth is like one giant magnet! That's why compasses always point North.</p>
+            </div>
+
+            <div class="explanation-card">
+                <h4>Why Is the Sky Blue?</h4>
+                <p class="simple-answer"><strong>Simple Answer:</strong> Sunlight bounces off tiny air particles and blue light spreads out the most.</p>
+                <p class="analogy"><strong>Think of it like:</strong> Imagine throwing colorful bouncy balls at a wall. Blue balls bounce everywhere and fill the whole room, while red balls just go straight.</p>
+                <div class="steps">
+                    <strong>How it works:</strong>
+                    <ol>
+                        <li>Sunlight has all the colors of the rainbow mixed together</li>
+                        <li>When it hits air, the colors scatter (bounce around)</li>
+                        <li>Blue light scatters the most because it's energetic</li>
+                        <li>So we see blue everywhere in the sky!</li>
+                    </ol>
+                </div>
+                <p class="fun-fact"><strong>Fun Fact:</strong> At sunset, the sky turns orange because blue light has scattered away and only red/orange reaches our eyes!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology -->
+    <section id="technology" class="topic-section">
+        <div class="container">
+            <h3>Technology</h3>
+
+            <div class="explanation-card">
+                <h4>How Does WiFi Work?</h4>
+                <p class="simple-answer"><strong>Simple Answer:</strong> WiFi sends invisible radio waves through the air to connect your devices to the internet.</p>
+                <p class="analogy"><strong>Think of it like:</strong> Your WiFi router is like a lighthouse sending out invisible light waves. Your phone catches these waves and turns them into websites and videos.</p>
+                <div class="steps">
+                    <strong>How it works:</strong>
+                    <ol>
+                        <li>Your router connects to the internet with a cable</li>
+                        <li>It converts internet data into radio waves</li>
+                        <li>These waves travel through the air</li>
+                        <li>Your phone/laptop catches them and shows you websites!</li>
+                    </ol>
+                </div>
+                <p class="fun-fact"><strong>Fun Fact:</strong> WiFi can't go through walls very well, just like shouting through a door makes it harder to hear!</p>
+            </div>
+
+            <div class="explanation-card">
+                <h4>What Is a QR Code?</h4>
+                <p class="simple-answer"><strong>Simple Answer:</strong> A QR code is a special pattern of squares that stores information your phone can read.</p>
+                <p class="analogy"><strong>Think of it like:</strong> It's like a secret code written in a special language that only cameras can understand and translate for you.</p>
+                <div class="steps">
+                    <strong>How it works:</strong>
+                    <ol>
+                        <li>Information (like a website link) is turned into a pattern</li>
+                        <li>The pattern is made of black and white squares</li>
+                        <li>Your phone camera scans the pattern</li>
+                        <li>It decodes it back into the information!</li>
+                    </ol>
+                </div>
+                <p class="fun-fact"><strong>Fun Fact:</strong> QR stands for "Quick Response" because they're super fast to scan!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nature -->
+    <section id="nature" class="topic-section">
+        <div class="container">
+            <h3>Nature</h3>
+
+            <div class="explanation-card">
+                <h4>Why Do Leaves Change Color?</h4>
+                <p class="simple-answer"><strong>Simple Answer:</strong> Leaves change color in fall because they stop making green chlorophyll.</p>
+                <p class="analogy"><strong>Think of it like:</strong> Imagine wearing a green jacket that hides your colorful shirt. When you take off the jacket (chlorophyll), everyone can see the colors underneath!</p>
+                <div class="steps">
+                    <strong>How it works:</strong>
+                    <ol>
+                        <li>Leaves have green chlorophyll that helps make food from sunlight</li>
+                        <li>In fall, trees prepare for winter and stop making chlorophyll</li>
+                        <li>The green fades away</li>
+                        <li>Other colors (yellow, orange, red) that were always there show up!</li>
+                    </ol>
+                </div>
+                <p class="fun-fact"><strong>Fun Fact:</strong> The brightest red leaves happen when it's sunny during the day and cold at night!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Space -->
+    <section id="space" class="topic-section">
+        <div class="container">
+            <h3>Space</h3>
+
+            <div class="explanation-card">
+                <h4>Why Do Stars Twinkle?</h4>
+                <p class="simple-answer"><strong>Simple Answer:</strong> Stars twinkle because their light passes through moving air in Earth's atmosphere.</p>
+                <p class="analogy"><strong>Think of it like:</strong> Looking at a coin at the bottom of a pool while someone makes waves. The coin seems to wiggle and shimmer, but it's not moving - the water is!</p>
+                <div class="steps">
+                    <strong>How it works:</strong>
+                    <ol>
+                        <li>Stars send out steady light</li>
+                        <li>The light travels through space (no twinkling yet)</li>
+                        <li>When it hits Earth's atmosphere, moving air bends the light</li>
+                        <li>This makes stars appear to twinkle!</li>
+                    </ol>
+                </div>
+                <p class="fun-fact"><strong>Fun Fact:</strong> Planets don't twinkle much because they're closer and look bigger, so the twinkling effect is less noticeable!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <img src="WebsiteLogo.png" alt="Curiosity Corner Logo" class="footer-logo">
+            <p>&copy 2026 Curiosity Corner<br>Made with ❤ by The Solitons</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
