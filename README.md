@@ -1,4 +1,4 @@
-# CuriosityCorner | Deployed on : <a href="https://curiositycorner.page.gd" target="_blank" rel="noopener noreferrer">Click Here</a>
+# CuriosityCorner | Deployed on : <a href="https://curiositycorner.page.gd">Click Here</a>
 
 A website dedicated to answer the questions that arises when we see and observe the beauty of the universe. To answer that 'WHY' factor.
 <br>
